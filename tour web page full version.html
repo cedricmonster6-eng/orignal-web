@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monster Tours | Driver Booking Rwanda</title>
+
+<meta name="description" content="Affordable and reliable driver services in Kigali. Book city rides, airport pickups, and full-day drivers easily.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#f5f7fa;color:#333}
+
+:root{
+--green:#00a651;
+--yellow:#fcd116;
+--blue:#00a1de;
+--dark:#222
+}
+
+header{
+position:fixed;
+width:100%;
+top:0;
+background:rgba(0,0,0,0.7);
+color:#fff;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+z-index:1000
+}
+
+.logo{
+font-weight:700;
+font-size:22px;
+color:var(--yellow)
+}
+
+nav a{
+color:white;
+margin-left:20px;
+text-decoration:none
+}
+
+.hero{
+height:100vh;
+position:relative
+}
+
+.hero video{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-1
+}
+
+.hero h1{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+color:white;
+font-size:40px;
+background:rgba(0,0,0,0.5);
+padding:20px;
+border-radius:10px;
+text-align:center
+}
+
+section{
+padding:100px 40px
+}
+
+.container{
+max-width:1100px;
+margin:auto
+}
+
+form{
+display:flex;
+flex-direction:column;
+gap:10px
+}
+
+input,select{
+padding:12px;
+border-radius:5px;
+border:1px solid #ccc
+}
+
+button{
+padding:12px;
+background:var(--green);
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer
+}
+
+button:hover{
+opacity:0.9
+}
+
+footer{
+background:var(--dark);
+color:white;
+text-align:center;
+padding:20px
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+font-size:20px
+}
+
+.success{
+color:green;
+margin-top:10px
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">Monster Tours</div>
+<nav>
+<a href="#booking">Book Driver</a>
+<a href="#info">Info</a>
+</nav>
+</header>
+
+<div class="hero">
+<video autoplay muted loop>
+<source src="https://cdn.coverr.co/videos/coverr-african-landscape-1574/1080p.mp4" type="video/mp4">
+</video>
+<h1>Reliable Driver Service in Kigali</h1>
+</div>
+
+<section id="booking">
+<div class="container">
+<h2>Book a Driver</h2>
+
+<form onsubmit="sendBooking(event)">
+<input type="text" id="name" placeholder="Full Name" required>
+<input type="email" id="email" placeholder="Email" required>
+<input type="tel" id="phone" placeholder="Phone Number" required>
+
+<select id="service" required>
+<option disabled selected>Select Service</option>
+<option>City Ride</option>
+<option>Airport Pickup</option>
+<option>Full-Day Driver</option>
+<option>Upcountry Trip</option>
+</select>
+
+<input type="date" id="date" required>
+
+<button type="submit">Book via WhatsApp</button>
+</form>
+
+<p id="msg" class="success"></p>
+</div>
+</section>
+
+<section id="info">
+<div class="container">
+<h2>Service Details</h2>
+
+<p><strong>Working Time:</strong><br>
+Day: 07:30 AM - 11:30 PM<br>
+(All days except Sunday)</p>
+
+<p><strong>Pricing:</strong><br>
+• City Ride: $20<br>
+• Airport Pickup: $20<br>
+• Full-Day Driver: $50<br>
+• Weekly: $150 (6 days)</p>
+
+<p><strong>Pickup:</strong> Anywhere in Kigali</p>
+
+<p><strong>Contact:</strong><br>
+📞 +250798826488<br>
+📧 cedricmonster6@gmail.com</p>
+
+</div>
+</section>
+
+<footer>
+<p>© 2026 MonsterTours.com</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/250798826488" target="_blank">💬</a>
+
+<script>
+function sendBooking(e){
+e.preventDefault();
+
+let name=document.getElementById('name').value;
+let email=document.getElementById('email').value;
+let phone=document.getElementById('phone').value;
+let service=document.getElementById('service').value;
+let date=document.getElementById('date').value;
+
+let message=`Driver Booking Request:%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AService: ${service}%0ADate: ${date}`;
+
+window.open(`https://wa.me/250798826488?text=${message}`, '_blank');
+
+document.getElementById('msg').innerText="Booking ready! Send it on WhatsApp.";
+}
+</script>
+
+</body>
+</html>
